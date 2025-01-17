@@ -2,11 +2,13 @@
 <%@ page import="java.util.Scanner" %>
 <%@ page import="java.io.StringWriter" %>
 <%@ page import="java.io.PrintWriter" %>
+<%@include file="WEB-INF/.pwadminconf.jsp"%>
 
 <%
-    String confFilePath = "/home/gamed/ptemplate.conf";
+    String confFilePath = pw_server_path +"/gamed/ptemplate.conf";
     String message = "";
     String traceLog = ""; // Initialize trace log
+    String baseValueString = "Base Value is: 1";
 
     if(request.getParameter("process") != null) {
         if(request.getParameter("process").compareTo("save_rates") == 0) {
@@ -129,28 +131,28 @@
                 <td><input type="text" name="exp_rate" value="<%= exp_rate %>" style="width: 60px; text-align: center;"></td>
             </tr>
              <tr>
-                <td colspan="2" align="center" class="base-rate-info">Base Value is: 1</td>
+                <td colspan="2" align="center" class="base-rate-info"><%= baseValueString %></td>
             </tr>
             <tr>
                 <td>SP Rate:</td>
                 <td><input type="text" name="sp_rate" value="<%= sp_rate %>" style="width: 60px; text-align: center;"></td>
             </tr>
               <tr>
-                <td colspan="2" align="center" class="base-rate-info">Base Value is: 1</td>
+                <td colspan="2" align="center" class="base-rate-info"><%= baseValueString %></td>
             </tr>
             <tr>
                 <td>Drop Rate:</td>
                 <td><input type="text" name="drop_rate" value="<%= drop_rate %>" style="width: 60px; text-align: center;"></td>
             </tr>
               <tr>
-                <td colspan="2" align="center" class="base-rate-info">Base Value is: 1</td>
+                <td colspan="2" align="center" class="base-rate-info"><%= baseValueString %></td>
             </tr>
              <tr>
                 <td>Coins Rate:</td>
                 <td><input type="text" name="coins_rate" value="<%= coins_rate %>" style="width: 60px; text-align: center;"></td>
             </tr>
              <tr>
-                <td colspan="2" align="center" class="base-rate-info">Base Value is: 1</td>
+                <td colspan="2" align="center" class="base-rate-info"><%= baseValueString %></td>
             </tr>
             <tr>
                 <td colspan="2" align="center" style="border-top: 1px solid #cccccc;">
